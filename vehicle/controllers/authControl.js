@@ -1,5 +1,4 @@
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const authController = {
@@ -31,7 +30,6 @@ const authController = {
         return res.redirect('/login');
       }
 
-      // Сохраняем информацию о пользователе в сессии
       req.session.user = { id: user.id, username: user.username };
 
       res.redirect('/dashboard');
@@ -52,11 +50,10 @@ const authController = {
   },
 
   checkAuth: (req, res, next) => {
-    // Проверка, если сессия пользователя существует
     if (req.session.user) {
-      return next(); // Пользователь авторизован, продолжаем выполнение
+      return next();
     } else {
-      return res.redirect('/login'); // Перенаправляем на страницу логина
+      return res.redirect('/login'); 
     }
   },
 };

@@ -11,25 +11,25 @@
 <body>
     <header class="bg-dark text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="display-4">Vehicles</h1>
+            <h1 class="display-4">Транспортні засоби</h1>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="/dashboard">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="/addVehicle">Add Vehicle</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="/logout">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/dashboard">Панель</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/addVehicle">Додати транспортний засіб</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/logout">Вихід</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="container">
-        <h2>Vehicle List</h2>
+        <h2>Список транспортних засобів</h2>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Brand</th>
-                    <th>Model</th>
-                    <th>Year</th>
-                    <th>License Plate</th>
+                    <th>Марка</th>
+                    <th>Модель</th>
+                    <th>Рік</th>
+                    <th>Номерні знаки</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,9 +52,9 @@
                                 data-target="#editVehicleModal" data-id="<%= vehicle.id %>"
                                 data-brand="<%= vehicle.brand %>" data-model="<%= vehicle.model %>"
                                 data-year="<%= vehicle.year %>"
-                                data-licenseplate="<%= vehicle.licensePlate %>">Edit</button>
+                                data-licenseplate="<%= vehicle.licensePlate %>">Редагувати</button>
                             <button type="button" class="btn btn-danger" data-toggle="modal"
-                                data-target="#deleteVehicleModal" data-id="<%= vehicle.id %>">Delete</button>
+                                data-target="#deleteVehicleModal" data-id="<%= vehicle.id %>">Видалити</button>
                         </td>
                     </tr>
                     <% }); %>
@@ -67,32 +67,32 @@
             <div class="modal-content">
                 <form action="/addVehicle" method="POST">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addVehicleModalLabel">Add Vehicle</h5>
+                        <h5 class="modal-title" id="addVehicleModalLabel">Додати транспортний засіб</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="brand">Brand</label>
+                            <label for="brand">Марка</label>
                             <input type="text" class="form-control" id="brand" name="brand" required>
                         </div>
                         <div class="form-group">
-                            <label for="model">Model</label>
+                            <label for="model">Модель</label>
                             <input type="text" class="form-control" id="model" name="model" required>
                         </div>
                         <div class="form-group">
-                            <label for="year">Year</label>
+                            <label for="year">Рік</label>
                             <input type="number" class="form-control" id="year" name="year" required>
                         </div>
                         <div class="form-group">
-                            <label for="licensePlate">License Plate</label>
+                            <label for="licensePlate">Номерні знаки</label>
                             <input type="text" class="form-control" id="licensePlate" name="licensePlate" required>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                        <button type="submit" class="btn btn-primary">Додати транспортний засіб</button>
                     </div>
                 </form>
             </div>

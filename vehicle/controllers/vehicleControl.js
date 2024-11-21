@@ -3,7 +3,7 @@ const db = require('../config/db');
 
 exports.getVehicles = async (req, res) => {
     try {
-      // Выполняем запрос с использованием async/await
+
       const [vehicles] = await db.query('SELECT * FROM vehicles');
       res.render('vehicles', { title: 'Vehicles List', vehicles });
     } catch (error) {

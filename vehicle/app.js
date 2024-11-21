@@ -27,13 +27,6 @@ app.use("/", vehicleRoutes);
 app.use("/", dashboardRoutes);
 app.get("/", (req, res) => res.render("index"));
 
-app.use((req, res, next) => {
-  console.log(req.cookies);
-  if (!req.cookies.token) {
-    return res.redirect("/login");
-  }
-  next();
-});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
